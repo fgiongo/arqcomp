@@ -5,12 +5,10 @@
 int quicksort_non_desc_test
 (void (*sort)(int *, int, int), int *arr, int length){
 	int iterations = 10000;
-	struct timespec ts;
 
+	srand((unsigned int) time(NULL));
 	for (int i = 0; i < iterations; ++i){
 
-		clock_gettime(CLOCK_MONOTONIC_RAW, &ts);
-		srand((unsigned int) ts.tv_nsec);
 		for (int j = 0; j < length; ++j){
 			arr[j] = rand() % 100;
 		}
